@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src" /* 指定输出文件目录（用于输出），用于控制输出目录结构 */,
+    "declaration": true /* 生成相关的 '.d.ts' 文件。 */,
+    "declarationDir": "./dist" /* '.d.ts' 文件输出目录 */,
+    "emitDeclarationOnly": true /* 只生成声明文件，不生成 js 文件 */,
+    "outDir": "./dist"
+
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/test/**/*"] // 排除不需要的文件
+}

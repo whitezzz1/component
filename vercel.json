@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "alwayxx-ui",
+  "framework": "vite",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm docs:build",
+  "outputDirectory": "docs/.vitepress/dist",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}

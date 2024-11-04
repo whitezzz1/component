@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>按需引入</title>
+  </head>
+
+  <body>
+    <h2>按需引入:SFC组件</h2>
+    <div id="app"></div>
+    <link rel="stylesheet" href="../../dist/entry.css" />
+    <script src="../../node_modules/vue/dist/vue.global.js"></script>
+    <script src="../../dist/avatar/index.umd.cjs"></script>
+    <script>
+      const { createApp } = Vue
+      const { Avatar } = avatar
+      console.log('SSYUI:avatar', Avatar)
+      createApp({
+        template: `
+        <div style="margin-bottom:20px;">
+            <s-avatar url="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" size="24px" round></s-avatar>
+            <s-avatar url="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" size="40px" color="green">中号头像</s-avatar>
+            <s-avatar url="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" size="60px" color="blue">大号头像</s-avatar>
+          </div>
+    `,
+      })
+        .use(Avatar)
+        .mount('#app')
+    </script>
+  </body>
+</html>

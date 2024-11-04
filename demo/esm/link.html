@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>按需引入</title>
+  </head>
+
+  <body>
+    <h2>按需引入:超链接组件</h2>
+    <div id="app"></div>
+    <link rel="stylesheet" href="../../dist/entry.css" />
+    <script src="../../node_modules/vue/dist/vue.global.js"></script>
+    <script src="../../dist/link/index.umd.cjs"></script>
+    <script>
+      const { createApp } = Vue
+      const { Link } = link
+      // console.log('vue', Vue)
+      console.log('SSYUI:Link', Link)
+      createApp({
+        template: `
+        <div style="margin-bottom:20px;">
+            <s-link size="small"></s-link>
+            <SLink size="medium" color="green">中号链接</SLink>
+            <SLink size="large" color="blue">大号链接</SLink>
+        </div>
+     `,
+      })
+        .use(Link)
+        .mount('#app')
+    </script>
+  </body>
+</html>
